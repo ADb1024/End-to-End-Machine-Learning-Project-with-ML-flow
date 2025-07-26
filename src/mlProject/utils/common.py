@@ -13,18 +13,6 @@ from typing import Any
 
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
-    """reads yaml file and returns
-
-    Args:
-        path_to_yaml (str): path like input
-
-    Raises:
-        ValueError: if yaml file is empty
-        e: empty file
-
-    Returns:
-        ConfigBox: ConfigBox type
-    """
     try:
         with open(path_to_yaml) as yaml_file:
             content = yaml.safe_load(yaml_file)
@@ -35,6 +23,8 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
     except Exception as e:
         raise e
     
+
+
 @ensure_annotations
 def create_directories(path_to_directories: list, verbose=True):
     """create list of directories
